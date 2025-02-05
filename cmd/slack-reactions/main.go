@@ -83,7 +83,6 @@ func getChannelID(api *slack.Client, channelName string) (string, error) {
 
 func getMessagesWithReaction(api *slack.Client, channelID, reaction, from string) ([]Message, error) {
 	fromTimestamp := convertToTimestamp(from)
-	fmt.Printf("channelID: %s, fromTimestamp: %f\n", channelID, fromTimestamp)
 	historyParams := slack.GetConversationHistoryParameters{
 		ChannelID: channelID,
 		Inclusive: false,
